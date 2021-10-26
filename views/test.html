@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>test ejs page</title>
+    </head>
+    <body>
+        view counter from local: 
+        <script language = "javascript" type "text/javascript">
+            const express = require('express')
+            const router = express.Router()
+            const word = require('./word')
+const WordRouter = require('./word')
+const Word = require("../../models/Word")
+var app = express()
+
+router.use('/words', word)
+
+
+
+WordRouter.route('/').get(async(req, res) => {
+    const words = await Word.find()
+    res.json({status: 200, words})
+})
+
+
+
+module.exports = router
+        </script>
+    </body>
+</html>
